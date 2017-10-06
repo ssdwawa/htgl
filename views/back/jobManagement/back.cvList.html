@@ -1,0 +1,37 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">所有简历</div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-20">姓名</div>
+                    <div class="main-col col-40">概要信息</div>
+                    <div class="main-col col-20">最近更新时间</div>
+                    <div class="main-col col-20">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="row in tableData">
+                    <div class="main-col col-20">{{row.name}}</div>
+                    <div class="main-col col-40">
+                        <span ng-if="row.gender == '1'">男</span><span ng-if="row.gender == '0'">女</span>，
+                        <span>{{row.birthday}}</span>，
+                        <span>{{row.education}}</span>，
+                        <span>{{row.experience}}</span>
+                    </div>
+                    <div class="main-col col-20">{{row.updateTime}}</div>
+                    <div class="main-col col-20">
+                        <a ng-click="checkResume(row)" class="btn btn-small btn-green">查看简历</a>
+                    </div>
+                </div>
+
+                <div class="main-row mt-15">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col text-right">
+                        <a class="btn btn-default" ng-click="prePage()">上一页</a>
+                        <a class="btn btn-default" ng-click="nextPage()">下一页</a>
+                        <span>第{{currentPage}}页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

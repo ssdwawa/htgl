@@ -1,0 +1,77 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">求职记录</div>
+            <div class="panel-operate">
+                <select ng-model="choseTime">
+                    <option value="0">今天</option>
+                    <option value="1">最近一周</option>
+                    <option value="2">最近一个月</option>
+                    <option value="3">最近三个月</option>
+                </select>
+                <a ng-click="queryTableData()" class="btn btn-info">确定</a>
+            </div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-20">职位名称</div>
+                    <div class="main-col col-20">企业名称</div>
+                    <div class="main-col col-20">投递简历</div>
+                    <div class="main-col col-15">投递时间</div>
+                    <div class="main-col col-15">状态</div>
+                    <div class="main-col col-10">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="row in tableData">
+                    <div class="main-col col-20">
+                        <p><strong>{{row.jobInfo}}</strong></p>
+                        <p>
+                            <span>{{row.workExperience}}</span>，
+                            <span>{{row.salaryLow}}~{{row.salaryHigh}}K</span>，
+                            <span>{{row.city}}</span>，
+                            <span>{{row.degreeRequired}}</span>
+                        </p>
+                    </div>
+                    <div class="main-col col-20">
+                        <p><strong>{{row.companyName}}</strong></p>
+                        <p>
+                            <span ng-if="row.isAdminCreate =='0'">企业自建</span>
+                            <span       ng-if="row.isAdminCreate =='1'">管理员代建</span>
+                            <p>{{row.positionCreateTime}}</p>
+                        </p>
+                    </div>
+                    <div class="main-col col-20">
+                        <p><strong>{{row.name}}</strong></p>
+                        <p>
+                            <span ng-if="row.gender == '1'">男</span><span ng-if="row.gender == '0'">女</span>，
+                            <span>{{row.birthday}}</span>，
+                            <span>{{row.degreeResume}}</span>，
+                            <p>{{row.workExperienceResume}}</p>
+                        </p>
+                    </div>
+                    <div class="main-col col-15">{{row.createTime}}</div>
+                    <div class="main-col col-15">
+                        <p>
+                            <span ng-if="row.status == '0'">未查看</span>
+                            <span ng-if="row.status == '1'">已查看</span>
+                            <span ng-if="row.status == '2'">面试通知</span>
+                            <p>{{row.updateTime}}</p>
+                        </p>
+
+
+                    </div>
+                    <div class="main-col col-10">
+                        <a ng-click="checkResume(row)" class="btn btn-small btn-green">查看简历</a>
+                    </div>
+                </div>
+
+                <div class="main-row mt-15">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col text-right">
+                        <a class="btn btn-default" ng-click="prePage()">上一页</a>
+                        <a class="btn btn-default" ng-click="nextPage()">下一页</a>
+                        <span>第{{currentPage}}页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="warp">
+    <!--顶部导航-->
+    <div class="topbar clearfix">
+        <div class="logo">
+            西安航天基地人才网
+        </div>
+
+        <div class="topbar-info">
+            <ul>
+                <li><span>{{username}}</span></li>
+                <li><a class="cursor-pointer" ng-click="changePwd()">修改密码</a></li>
+                <li><a class="cursor-pointer" ng-click="logout()">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--End 顶部导航-->
+
+    <!--左侧导航-->
+    <div class="sidebar">
+        <div class="sidebar-leftnav nano">
+            <ul class="level_1 nano-content">
+                <li class="on">
+                    <a ng-click="expandMenu('is_em_open')"><i class="fa fa-building-o"></i>企业管理</a>
+                    <ul class="level_2" ng-show="is_em_open">
+                        <li><a ng-class="{'active':is_em_1_active}" ui-sref="enterprise.enterprise_base_info">企业基本信息</a></li>
+                    </ul>
+                </li>
+                <li class="on">
+                    <a ng-click="expandMenu('is_pm_open')"><i class="fa fa-flag-o"></i>职位管理</a>
+                    <ul class="level_2" ng-show="is_pm_open">
+                        <li><a ng-class="{'active':is_pm_1_active}" ui-sref="enterprise.e_publish_job">职位发布</a></li>
+                        <li><a ng-class="{'active':is_pm_2_active}" ui-sref="enterprise.e_job_apply_record">求职记录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--End 左侧导航-->
+
+    <!--主要内容区域-->
+    <div class="main">
+        <div ui-view></div>
+    </div>
+    <!--End 主要内容区域-->
+</div>

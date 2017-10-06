@@ -1,0 +1,36 @@
+<div class="system-title">
+    西安航天基地人才网
+</div>
+
+<div class="form-box">
+    <form class="form">
+        <div class="main-row" style="height: 50px;text-align: center;line-height: 50px">
+            <h1>login</h1>
+        </div>
+
+        <div class="main-row">
+            <div class="main-col col-25 txt_right"><label>用户名：</label></div>
+            <div class="main-col">
+                <input type="text"
+                       ng-model="formData.account"
+                       invalid
+                       ng-invalid="invalid.account"
+                       invalid-message="invalidMessage.account"/>
+            </div>
+        </div>
+        <div class="main-row">
+            <div class="main-col col-25 txt_right"><label>密码：</label></div>
+            <div class="main-col">
+                <input type="password"
+                       ng-model="formData.pwd"
+                       invalid
+                       ng-invalid="invalid.pwd"
+                       invalid-message="invalidMessage.pwd"/>
+            </div>
+        </div>
+
+        <div class="main-row">
+            <div class="main-col col-100 text-center"><a href="#" class="btn btn-info" ng-click="login()">登录</a></div>
+        </div>
+    </form>
+</div>

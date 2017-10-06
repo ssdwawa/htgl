@@ -1,0 +1,142 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">{{title}}</div>
+            <form class="form">
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>企业名称：</label></div>
+                    <div class="main-col">
+                        <input type="text"
+                               ng-disabled="isFormDisabled"
+                               ng-model="formData.companyName"
+                               invalid
+                               ng-invalid="invalid.companyName"
+                               invalid-message="invalidMessage.companyName"/>
+
+                        <div class="company-list" ng-init="isShowCompanyList = false" ng-show="isShowCompanyList">
+                            <div class="company-item" ng-repeat="item in companyList" ng-click="selectCompany(item)">{{item.name}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>职位名称：</label></div>
+                    <div class="main-col">
+                        <select ng-model="formData.jobType"
+                                ng-options="item.id as item.typeName for item in jobTypeList"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.jobType"
+                                invalid-message="invalidMessage.jobType">
+                            <option value="">--请选择--</option>
+                        </select>
+                        <select ng-model="formData.jobInfoId"
+                                ng-options="item.id as item.infoName for item in jobList"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.jobInfoId"
+                                invalid-message="invalidMessage.jobInfoId">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>职位类型：</label></div>
+                    <div class="main-col">
+                        <select ng-model="formData.type"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.type"
+                                invalid-message="invalidMessage.type">
+                            <option value="">--请选择--</option>
+                            <option value="0">兼职</option>
+                            <option value="1">全职</option>
+                            <option value="2">实习</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>工作地点：</label></div>
+                    <div class="main-col">
+                        <select ng-model="formData.province"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.province"
+                                invalid-message="invalidMessage.province"
+                                ng-options="item.id as item.name for item in provinceList">
+                            <option value="">--请选择--</option>
+                        </select>
+
+                        <select ng-model="formData.city"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.city"
+                                invalid-message="invalidMessage.city"
+                                ng-init="isShowCitySelector = false" ng-show="isShowCitySelector"
+                                ng-options="item.id as item.name for item in cityList">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>月薪：</label></div>
+                    <div class="main-col">
+                        <input type="text" ng-model="formData.salaryLow"  ng-disabled="isFormDisabled"/>
+                        <span>~</span>
+                        <input type="text"
+                               ng-disabled="isFormDisabled"
+                               ng-model="formData.salaryHigh"/>
+                        <span invalid
+                              ng-invalid="invalid.salary"
+                              invalid-message="invalidMessage.salary">（单位：K，千元）</span>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>工作经验：</label></div>
+                    <div class="main-col">
+                        <select ng-model="formData.workExperienceId"
+                                ng-disabled="isFormDisabled"
+                                invalid
+                                ng-invalid="invalid.workExperienceId"
+                                invalid-message="invalidMessage.workExperienceId"
+                                ng-options="item.id as item.experienceTime for item in experienceList">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>学历要求：</label></div>
+                    <div class="main-col">
+                        <select ng-model="formData.degreeRequiredId"
+                                ng-options="item.id as item.degree for item in diplomaList"
+                                invalid
+                                ng-disabled="isFormDisabled"
+                                ng-invalid="invalid.degreeRequiredId"
+                                invalid-message="invalidMessage.degreeRequiredId">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>职位描述：</label></div>
+                    <div class="main-col">
+                        <textarea ng-model="formData.jobDescription"
+                                  ng-disabled="introductionDisabled"
+                                  invalid
+                                  ng-invalid="invalid.jobDescription"
+                                  invalid-message="invalidMessage.jobDescription"></textarea></div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col" ng-if="formData.status != '-1'">
+                        <a ng-click="submitJob()" class="btn btn-info">确定</a>
+                        <a ng-click="cancel()" class="btn btn-red">取消</a>
+                    </div>
+
+                    <div ng-if="formData.status == '-1'" class="main-col">
+                        <a ng-click="cancel()" class="btn btn-info">返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

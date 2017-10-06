@@ -1,0 +1,26 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">职位统计</div>
+            <div class="panel-list">
+                <div id="position_count_chart" class="chart-size"></div>
+            </div>
+
+            <div class="panel-operate mb5">
+                <select class="ml-5"
+                        ng-model="jobType"
+                        ng-options="item.id as item.typeName for item in jobTypeList">
+                    <option value="">--请选择--</option>
+                </select>
+                <select ng-model="jobInfoId"
+                        ng-options="item.id as item.infoName for item in jobList">
+                    <option value="">--请选择--</option>
+                </select>
+                <a ng-click="searchData()" class="btn btn-info">查询</a>
+            </div>
+            <div class="panel-list">
+                <div id="position_salary_chart" class="chart-size"></div>
+            </div>
+        </div>
+    </div>
+</div>

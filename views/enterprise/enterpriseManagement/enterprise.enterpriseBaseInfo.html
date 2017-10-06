@@ -1,0 +1,63 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">企业基本信息</div>
+            <div class="form">
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>企业名称：</label></div>
+                    <div class="main-col">{{enterInfo.name}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>社会统一信用代码：</label></div>
+                    <div class="main-col">{{enterInfo.creditCode}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>Logo：</label></div>
+                    <div class="main-col">
+                        <img ng-src="{{enterInfo.logo}}" width="150px" height="150px" alt=""/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>行业领域：</label></div>
+                    <div class="main-col">{{enterInfo.industrySector}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>企业所在城市：</label></div>
+                    <div class="main-col">{{enterInfo.city}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>详细地址：</label></div>
+                    <div class="main-col">{{enterInfo.address}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>企业联系人：</label></div>
+                    <div class="main-col">{{enterInfo.contactName}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>联系电话：</label></div>
+                    <div class="main-col">{{enterInfo.contactPhone}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>电子邮箱：</label></div>
+                    <div class="main-col">{{enterInfo.email}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>特色标签：</label></div>
+                    <div class="main-col">
+                        <div ng-repeat="(key,value) in enterInfo.specialTagMaps">
+                            <label>{{key}}：{{value}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>详细介绍：</label></div>
+                    <div class="main-col" id="enterpriseIntroduction"></div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col"><a ng-click="go2Edit()" class="btn btn-info">编辑</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

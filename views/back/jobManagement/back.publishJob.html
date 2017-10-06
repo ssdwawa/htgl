@@ -1,0 +1,63 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">职位发布</div>
+            <div class="panel-operate"><a ui-sref="back.add_job" class="btn btn-info">新建</a></div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-30">职位名称</div>
+                    <div class="main-col col-30">企业名称</div>
+                    <div class="main-col col-20">发布时间</div>
+                    <div class="main-col col-20">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="row in tableData">
+                    <div class="main-col col-30">
+                        <p><strong>{{row.jobInfo}}</strong></p>
+                        <p><span>{{row.workExperience}}</span>，<span>{{row.salaryLow}}~{{row.salaryHigh}}K</span>，<span>{{row.city}}</span>，<span>{{row.degreeRequired}}</span></p>
+                    </div>
+                    <div class="main-col col-30">
+                        <p><strong>{{row.companyName}}</strong></p>
+                        <p><span ng-if="row.isAdminCreate == 0">企业自建</span><span ng-if="row.isAdminCreate == 1">管理员代建</span></p>
+                    </div>
+                    <div class="main-col col-20">
+                        <span ng-if="row.status == 0"></span>
+                        <span ng-if="row.status == 1||row.status==3">{{row.updateTime}}</span>
+                    </div>
+                    <div class="main-col col-20">
+                        <a ng-if="row.status != '3'" ng-click="edit(row)" class="btn btn-small btn-info">编辑</a>
+                        <a ng-if="row.status == '0'" ng-click="changeJobStatus(row, '1')" class="btn btn-small btn-red">发布</a>
+                        <a ng-if="row.status == '1'" ng-click="changeJobStatus(row, '0')" class="btn btn-small btn-red">撤销</a>
+                        <a ng-if="row.status == '3'" ng-click="check(row)" class="btn btn-small btn-info">查看</a>
+                    </div>
+                </div>
+
+                <div class="main-row mt-15">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col text-right">
+                        <a class="btn btn-default" ng-click="prePage()">上一页</a>
+                        <a class="btn btn-default" ng-click="nextPage()">下一页</a>
+                        <span>第{{currentPage}}页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="infoPublishJob">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col text-center"><label>职位发布后，如有人投递简历，则该职位不能撤销，请您再次确认是否发布本职位？</label></div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col col-40">
+                    <a class="btn btn-info" id="submit">确定</a>
+                    <a class="btn btn-info" id="cancel">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

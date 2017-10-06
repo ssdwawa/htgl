@@ -1,0 +1,69 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">企业会员</div>
+            <div class="panel-operate">
+                <input type="text" placeholder="企业名称" ng-model="searchName"/>
+                <a ng-click="searchCompany()" class="btn btn-info">查询</a>
+            </div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-40">企业名称</div>
+                    <div class="main-col col-20">联系方式</div>
+                    <div class="main-col col-20">会员名称</div>
+                    <div class="main-col col-20">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="row in tableData">
+                    <div class="main-col col-40">
+                        <p>
+                            <strong>{{row.name}}</strong>
+                        </p>
+                        <p>{{row.creditCode}}</p>
+                    </div>
+                    <div class="main-col col-20">
+                        <p>{{row.contactName}}</p>
+                        <p>{{row.contactPhone}}</p>
+                    </div>
+                    <div class="main-col col-20">{{row.account}}</div>
+                    <div class="main-col col-20">
+                        <a class="btn btn-small btn-info" ng-click="editVip(row)">编辑会员</a>
+                        <a ng-if="row.account" class="btn btn-small btn-red" ng-click="resetPwd(row)">重置密码</a>
+                    </div>
+                </div>
+
+                <div class="main-row mt-15">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col text-right">
+                        <a class="btn btn-default" ng-click="prePage()">上一页</a>
+                        <a class="btn btn-default" ng-click="nextPage()">下一页</a>
+                        <span>第{{currentPage}}页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="vipEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>企业会员账号：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="account"/>
+                </div>
+            </div>
+
+            <div class="main-row" style="display: none">
+                <div class="main-col col-30 txt_right"><label>xxxx：</label></div>
+                <div class="main-col">
+                    <input type="text" name="xxxx"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>

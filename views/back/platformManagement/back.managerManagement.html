@@ -1,0 +1,56 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">管理员管理</div>
+            <div class="panel-operate"><a ng-click="addManager()" class="btn btn-info">新建</a></div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-20">管理员姓名</div>
+                    <div class="main-col col-20">管理员账户</div>
+                    <div class="main-col col-50">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="item in tableData">
+                    <div class="main-col col-20">{{item.name}}</div>
+                    <div class="main-col col-20">{{item.account}}</div>
+                    <div class="main-col col-50">
+                        <a ng-click="editManager(item)" class="btn btn-small btn-info">编辑</a>
+                        <a ng-click="changeStatus(item)" class="btn btn-small btn-red">
+                            <span ng-if="item.status === '0'">停用</span>
+                            <span ng-if="item.status === '1'">启用</span>
+                        </a>
+                        <a ng-click="resetManagerPwd(item)" class="btn btn-small btn-red">重置密码</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="editAccout">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>姓名：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="name"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>账户：</label></div>
+                <div class="main-col">
+                    <input class="form-data" type="text" name="account"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>联系电话：</label></div>
+                <div class="main-col">
+                    <input class="form-data" type="text" name="phone"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>

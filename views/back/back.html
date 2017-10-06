@@ -1,0 +1,67 @@
+<div class="warp">
+    <!--顶部导航-->
+    <div class="topbar clearfix">
+        <div class="logo">
+            西安航天基地人才网
+        </div>
+
+        <div class="topbar-info">
+            <ul>
+                <li><span>{{userInfo.name}}</span></li>
+                <li><a class="cursor-pointer" ng-click="changePwd()">修改密码</a></li>
+                <li><a class="cursor-pointer" ng-click="logout()">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--End 顶部导航-->
+
+    <!--左侧导航-->
+    <div class="sidebar">
+        <div class="sidebar-leftnav nano">
+            <ul class="level_1 nano-content">
+                <li class="on">
+                    <a ng-click="expandMenu('is_em_open')"><i class="fa fa-building-o"></i>企业管理</a>
+                    <ul class="level_2" ng-show="is_em_open">
+                        <li><a ng-class="{'active':is_em_1_active}" ui-sref="back.enterprise_library">企业库</a></li>
+                        <li><a ng-class="{'active':is_em_2_active}" ui-sref="back.enterprise_vip">企业会员</a></li>
+                    </ul>
+                </li>
+
+                <li class="on">
+                    <a ng-click="expandMenu('is_pm_open')"><i class="fa fa-flag-o"></i>职位管理</a>
+                    <ul class="level_2" ng-show="is_pm_open">
+                        <li><a ng-class="{'active':is_pm_1_active}" ui-sref="back.publish_job">职位发布</a></li>
+                        <li><a ng-class="{'active':is_pm_2_active}" ui-sref="back.job_apply_record">求职记录</a></li>
+                        <li><a ng-class="{'active':is_pm_3_active}" ui-sref="back.CV_list">所有简历</a></li>
+                    </ul>
+                </li>
+                <li class="on">
+                    <a ng-click="expandMenu('is_pfm_open')"><i class="fa fa-cogs"></i>平台设置</a>
+                    <ul class="level_2" ng-show="is_pfm_open">
+                        <li><a ng-class="{'active':is_pfm_1_active}" ui-sref="back.manager_management">管理员管理</a></li>
+                        <!--<li><a ng-class="{'active':is_pfm_2_active}" ui-sref="back.city_config">城市信息设置</a></li>-->
+                        <li><a ng-class="{'active':is_pfm_3_active}" ui-sref="back.diploma_config">学历设置</a></li>
+                        <li><a ng-class="{'active':is_pfm_4_active}" ui-sref="back.experience">工作经验</a></li>
+                        <li><a ng-class="{'active':is_pfm_5_active}" ui-sref="back.field">行业领域</a></li>
+                        <li><a ng-class="{'active':is_pfm_6_active}" ui-sref="back.characteristic_tag">特色标签</a></li>
+                        <li><a ng-class="{'active':is_pfm_7_active}" ui-sref="back.position_config">职位设置</a></li>
+                    </ul>
+                </li>
+                <li class="on">
+                    <a ng-click="expandMenu('is_dc_open')"><i class="fa fa-database"></i>数据统计</a>
+                    <ul class="level_2" ng-show="is_dc_open">
+                        <li><a ng-class="{'active':is_dc_1_active}" ui-sref="back.position_count">职位统计</a></li>
+                        <li><a ng-class="{'active':is_dc_2_active}" ui-sref="back.resume_count">简历统计</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--End 左侧导航-->
+
+    <!--主要内容区域-->
+    <div class="main">
+        <div ui-view></div>
+    </div>
+    <!--End 主要内容区域-->
+</div>

@@ -1,0 +1,184 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">查看简历<a ng-click="goBack()" class="tolist">返回</a></div>
+            <div class="form">
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>基本信息：</h2>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>照片：</label></div>
+                    <div class="main-col"><img ng-src="{{resumeInfo.photo}}" width="150px" height="150px"/></div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>姓名：</label></div>
+                    <div class="main-col">{{resumeInfo.name}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>出生年月：</label></div>
+                    <div class="main-col">{{resumeInfo.birthday}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>联系电话：</label></div>
+                    <div class="main-col">{{resumeInfo.telephone}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>电子邮箱：</label></div>
+                    <div class="main-col">{{resumeInfo.email}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>工作经验：</label></div>
+                    <div class="main-col">{{resumeInfo.experience}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>最高学历：</label></div>
+                    <div class="main-col">{{resumeInfo.education}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>居住城市：</label></div>
+                    <div class="main-col">{{resumeInfo.location}}</div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>教育经历：</h2>
+                    </div>
+                </div>
+                <div class="panel-list">
+                    <div class="main-row thead">
+                        <div class="main-col col-20">学校名称</div>
+                        <div class="main-col col-40">所学专业</div>
+                        <div class="main-col col-20">获得学历</div>
+                        <div class="main-col col-20">毕业时间</div>
+                    </div>
+                    <div class="main-row tbody" ng-repeat="row in resumeInfo.edus">
+                        <div class="main-col col-20">{{row.college}}</div>
+                        <div class="main-col col-40"><p>{{row.major}}</p></div>
+                        <div class="main-col col-20">{{row.record}}</div>
+                        <div class="main-col col-20">{{row.endtime}}</div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>培训经历：</h2>
+                    </div>
+                </div>
+                <div class="panel-list">
+                    <div class="main-row thead">
+                        <div class="main-col col-40">培训机构名称</div>
+                        <div class="main-col col-40">培训内容</div>
+                        <div class="main-col col-20">培训时间</div>
+                    </div>
+                    <div class="main-row tbody" ng-repeat="row in resumeInfo.trainings">
+                        <div class="main-col col-40">{{row.name}}</div>
+                        <div class="main-col col-40"><p>{{row.content}}</p></div>
+                        <div class="main-col col-20">{{row.trainingTime}}</div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>工作或实习经历：</h2>
+                    </div>
+                </div>
+                <div class="panel-list">
+                    <div class="main-row thead">
+                        <div class="main-col col-20">公司名称</div>
+                        <div class="main-col col-20">职位</div>
+                        <div class="main-col col-20">在职时间</div>
+                        <div class="main-col col-40">工作内容</div>
+                    </div>
+                    <div class="main-row tbody" ng-repeat="row in resumeInfo.works">
+                        <div class="main-col col-20">{{row.companyName}}</div>
+                        <div class="main-col col-20">{{row.position}}</div>
+                        <div class="main-col col-20"><p>{{row.workTime}}</p></div>
+                        <div class="main-col col-40"><p>{{row.jobContent}}</p></div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>获得荣誉、奖励或职称：</h2>
+                    </div>
+                </div>
+                <div class="panel-list">
+                    <div class="main-row thead">
+                        <div class="main-col col-50">名称</div>
+                        <div class="main-col col-50">获得时间</div>
+                    </div>
+                    <div class="main-row tbody" ng-repeat="row in resumeInfo.honors">
+                        <div class="main-col col-50">{{row.name}}</div>
+                        <div class="main-col col-50">{{row.time}}</div>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col">
+                        <h2>其他信息：</h2>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>自我描述：</label></div>
+                    <div class="main-col"><p>{{resumeInfo.introduction}}</p></div>
+                </div>
+
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col">
+                        <a ng-click="notice()" class="btn btn-info btn-green">面试通知</a>
+                        <a ng-click="goBack()" class="btn btn-info">返回</a>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="noticeEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>面试时间：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="interTime"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>面试地点：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="place"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>联系人：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="linkman"/>
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>联系电话：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="phone"/>
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>联系邮箱：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="email"/>
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>备注：</label></div>
+                <div class="main-col">
+                    <input type="text" class="form-data" name="remark">
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>

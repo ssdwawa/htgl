@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>西安航天基地人才网</title>
+    <link rel="stylesheet" href="../css/reset.css?v=htrcv1.3">
+    <link rel="stylesheet" href="../css/base.css?v=htrcv1.3">
+    <link rel="stylesheet" href="../css/module.css?v=htrcv1.3">
+    <link rel="stylesheet" href="../libs/layer/skin/default/layer.css?v=htrcv1.3">
+    <link rel="stylesheet" href="../libs/awesome/css/font-awesome.min.css?v=htrcv1.3">
+    <link rel="stylesheet" href="../css/main.css?v=htrcv1.3">
+</head>
+<body ng-controller="rootController">
+
+<div ui-view></div>
+
+<script type="text/javascript" src="../libs/jquery-1.9.1.min.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../libs/layer/layer.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../libs/echarts/echarts.min.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../libs/underscore/underscore-min.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../libs/angular/angular.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../libs/ui-router/angular-ui-router.js?v=htrcv1.3"></script>
+
+<script type="text/javascript" src="../js/apps/backApp.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/apps/enterpriseApp.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/apps/app.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/directives/Invalid.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/common/config.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/common/commonService.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/common/localStorage.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/common/Layer.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/services/enterprise/enterpriseService.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/services/home/homeService.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/services/platform/platformService.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/services/job/jobService.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/services/count/countService.js?v=htrcv1.3"></script>
+
+<script type="text/javascript" src="../js/controllers/rootController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/home/homeController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/home/loginController.js?v=htrcv1.3"></script>
+
+<script type="text/javascript" src="../js/controllers/back/backController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/enterpriseManagement/enterpriseLibraryController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/enterpriseManagement/addEnterpriseController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/enterpriseManagement/enterpriseVipController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/jobManagement/publishJobController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/jobManagement/jobApplyRecordController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/jobManagement/addJobController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/jobManagement/cvListController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/jobManagement/resumeController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/characteristicTagCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/cityConfigCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/diplomaConfigCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/experienceCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/fieldCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/managerManagementCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/platformManagement/positionConfigCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/count/positionCountController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/back/count/resumeCountController.js?v=htrcv1.3"></script>
+
+<script type="text/javascript" src="../js/controllers/enterprise/enterpriseController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/enterpriseManagement/enterpriseBaseInfoCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/enterpriseManagement/editEnterpriseCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/jobManagement/eJobApplyRecordController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/jobManagement/ePublishJobController.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/jobManagement/eAddJobCtr.js?v=htrcv1.3"></script>
+<script type="text/javascript" src="../js/controllers/enterprise/jobManagement/eResumeController.js?v=htrcv1.3"></script>
+
+<template id="passwordEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>账户密码：</label></div>
+                <div class="main-col">
+                    <input type="password" class="form-data" name="pwd"/>
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>新密码：</label></div>
+                <div class="main-col">
+                    <input type="password" class="form-data" name="newPwd"/>
+                </div>
+            </div>
+
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>确认密码：</label></div>
+                <div class="main-col">
+                    <input type="password" class="form-data" name="confirmPwd"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>
+</body>
+</html>

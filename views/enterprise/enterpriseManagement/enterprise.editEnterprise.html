@@ -1,0 +1,178 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">编辑企业信息</div>
+            <form class="form">
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><span class="star">*</span><label>企业名称：</label></div>
+                    <div class="main-col">
+                        {{formData.name}}
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <span class="star">*</span><label>社会统一信用代码：</label>
+                    </div>
+                    <div class="main-col">
+                        <input type="text"
+                               disabled
+                               ng-model="formData.creditCode"
+                               invalid
+                               ng-invalid="invalid.creditCode"
+                               invalid-message="invalidMessage.creditCode"/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>Logo：</label></div>
+                    <div class="main-col">
+                        <div class="upload-trigger image-upload" ng-if="!formData.logoUrl">
+                            <div>
+                                <div class="table-row">
+                                    <div class="table-cell" ng-click="uploadLogo()">点击上传</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="upload-trigger image-preview" ng-if="formData.logoUrl">
+                            <div>
+                                <div class="table-row">
+                                    <div class="table-cell" ng-click="uploadLogo()">
+                                        <span>点击上传</span>
+                                        <img ng-src="{{formData.logoUrl}}" alt="" style="width: 150px;height: 150px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="eLogo" style="display: none">
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <span class="star">*</span><label>行业领域：</label>
+                    </div>
+                    <div class="main-col">
+                        <select ng-model="formData.industrySector"
+                                ng-options="item.id as item.sector for item in industrySectorList"
+                                invalid
+                                disabled
+                                ng-invalid="invalid.industrySector"
+                                invalid-message="invalidMessage.industrySector">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <span class="star">*</span><label>企业所在城市：</label>
+                    </div>
+                    <div class="main-col">
+                        <select ng-model="formData.province"
+                                ng-options="item.id as item.name for item in provinceList"
+                                disabled
+                                invalid
+                                ng-invalid="invalid.province"
+                                invalid-message="invalidMessage.province">
+                            <option value="">--请选择--</option>
+                        </select>
+
+                        <select ng-model="formData.city"
+                                ng-init="isShowCitySelector = false"
+                                ng-show="isShowCitySelector"
+                                disabled
+                                ng-options="item.id as item.name for item in cityList"
+                                invalid
+                                ng-invalid="invalid.city"
+                                invalid-message="invalidMessage.city">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <span class="star">*</span><label>详细地址：</label>
+                    </div>
+                    <div class="main-col">
+                        <input type="text"
+                               ng-model="formData.address"
+                               invalid
+                               ng-invalid="invalid.address"
+                               invalid-message="invalidMessage.address"/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                       <label>企业联系人：</label>
+                    </div>
+                    <div class="main-col">
+                        <input type="text"
+                               ng-model="formData.contactName"
+                               invalid
+                               ng-invalid="invalid.contactName"
+                               invalid-message="invalidMessage.contactName"/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <label>联系电话：</label>
+                    </div>
+                    <div class="main-col">
+                        <input type="text"
+                               ng-model="formData.contactPhone"
+                               invalid
+                               ng-invalid="invalid.contactPhone"
+                               invalid-message="invalidMessage.contactPhone"/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <label>电子邮箱：</label>
+                    </div>
+                    <div class="main-col">
+                        <input type="text"
+                               ng-model="formData.email"
+                               invalid
+                               ng-invalid="invalid.email"
+                               invalid-message="invalidMessage.email"/>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"><label>特色标签：</label></div>
+                    <div class="main-col">
+                        <dl ng-repeat="item in specialTagList">
+                            <dt>{{item.tagName}}：</dt>
+                            <dd>
+                                <label ng-repeat="tag in item.children">
+                                    <input ng-if="item.isradio === '0'"
+                                           type="radio"
+                                           name="{{item.id}}"
+                                           value="{{tag.id}}"
+                                           ng-model="item.checkedVal">
+                                    <input ng-if="item.isradio === '1'"
+                                           type="checkbox"
+                                           name="{{item.id}}"
+                                           ng-model="tag.checked">
+                                    <span>{{tag.infoName}}</span>
+                                </label>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right">
+                        <span class="star">*</span><label>详细介绍：</label>
+                    </div>
+                    <div class="main-col">
+                        <textarea ng-model="formData.introduction"
+                                  invalid
+                                  ng-invalid="invalid.introduction"
+                                  invalid-message="invalidMessage.introduction"></textarea>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div class="main-col col-25 txt_right"></div>
+                    <div class="main-col"><a class="btn btn-info" ng-click="confirm()">确定</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

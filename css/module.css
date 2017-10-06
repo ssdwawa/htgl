@@ -1,0 +1,444 @@
+/*
+ * 本样式文件用于控制页面中的每一个通用组件
+ * 2016-06-17
+ * */
+
+/*=======================================单元格内的面板组件==============================================*/
+.panel{
+	padding:15px;
+}
+.panel-default{
+	background-color: white;
+	/*box-shadow: 0 0 1px 1px rgba(0,0,0,.1);*/
+	/*border:1px solid #ddd;*/
+	/*border-radius: 3px;*/
+}
+/*面板头部，用于显示面板的名称*/
+.panel-head{
+	position: relative;
+	padding-left:10px;
+	margin-bottom:20px;
+	border-left:2px solid #23b7e5;
+	font-size: 16px;
+	font-weight: bold;
+	color: #777;
+	line-height: 30px;
+}
+.panel-head .more{
+	position: absolute;
+	right: 10px;
+	top:0px;
+	font-size: 20px;
+	color:#0095C8;
+}
+.panel-head .more:hover{
+	color: #00bbfb;
+}
+
+.panel-head .tolist{
+	display: inline-block;
+	margin-left: 10px;
+	padding:4px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: normal;
+	border:1px solid #31b0d5;
+	color: #31b0d5;
+}
+.panel-head .tolist:before{
+	content: "\f148";
+	display: inline-block;
+    font: normal normal normal 12px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding:0 5px;
+    color: #31b0d5;
+}
+.panel-head .tolist:hover,
+.panel-head .tolist:hover:before{
+	text-decoration: none;
+	color: #25819C;
+}
+
+/*面板操作区域，用于放置增加、删除等操作按钮，控制下方的列表显示*/
+.panel-operate{
+	margin-bottom:20px;
+}
+.panel-operate .btn{
+	margin-right: 10px;
+}
+.panel-operate select,input{
+	outline: none;
+    height: 36px;
+    vertical-align: bottom;
+    margin-right: 5px;
+    padding: 0px 10px;
+}
+
+.operate-right {
+	float: right;
+}
+.operate-right .btn{
+	margin-right: 0 !important;
+}
+
+/*面板文字列表区域，用于放置数据列表，内部嵌套main-row、main-col*/
+.panel-list{
+	margin-bottom:10px;
+}
+.panel-list .thead .main-col{
+	height: 45px;
+	background-color: #f7f7f7;
+	text-align: left;
+	color: #777;
+	font-weight: bold;
+}
+.panel-list .tbody .main-col{
+	height: 50px;
+	border-bottom: 1px solid #e9e9e9;
+	color: #777;
+}
+.panel-list .thead .main-col,
+.panel-list .tbody .main-col{
+	padding:8px 10px;
+	vertical-align: middle;
+}
+.panel-list .tbody:hover{
+	background-color: #EAF8FE;
+}
+.panel-list .tbody .btn{
+	margin-right: 5px;
+}
+.panel-list .tbody p{
+	padding:5px 0;
+	line-height: 1.2;
+}
+.panel-list .level1 .col-20{
+	font-weight: bolder;
+}
+.panel-list .level2 .col-20{
+	padding-left:4em;
+}
+/*面板图片列表区域,与上面的文字列表不同，内部嵌套main-row、main-col*/
+.panel-piclist{
+	margin-bottom:10px;
+}
+.panel-piclist .main-row{
+	padding-bottom:20px;
+}
+.panel-piclist .main-col{
+	width:25%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+.panel-piclist .itembox{
+	display: inline-table;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+    padding:15px;
+    transition: all .3s ease-in-out;
+}
+.panel-piclist .itembox:hover{
+	background-color: #f9f9f9;
+	box-shadow: 0 5px 20px rgba(0,0,0,.15);
+	transform: translateY(-4px);
+}
+
+/*=============================操作提示组件=============================*/
+.alert{
+	border-left-width: 5px;
+	border-left-style: solid;
+	padding:10px ;
+	line-height: 1.5;
+	/*box-shadow: 0 0 1px 1px rgba(0,0,0,.1);*/
+}
+.alert-info{
+	color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-warn{
+	color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-success{
+	color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-error{
+	color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+
+/*=========================按钮组件=============================*/
+.btn{
+	display: inline-block;
+	outline: none;
+	border: 0;
+	text-decoration: none;
+	cursor: pointer;
+	vertical-align: middle;
+	outline: 0;
+	padding:8px 17px;
+	line-height:1.5;
+}
+.btn:hover{
+	text-decoration: none;
+}
+/*按钮颜色*/
+.btn-default{
+	border-radius:3px;
+	background-color: #e4e7ea;
+	border:1px solid #e4e7ea;
+    color: #636e7b;
+
+}
+.btn-default:hover{
+	background-color: #d2d5d8;
+}
+.btn-blue{
+	border-radius:3px;
+	background-color: #00C0EF;
+	border:1px solid #00C0EF;
+	color: white;
+}
+.btn-blue:hover{
+	background-color: #00ADD8;
+	border:1px solid #00ADD8;
+}
+.btn-info{
+	border-radius:3px;
+	color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.btn-info:hover{
+	color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.btn-gray{
+	background-color: #c1cacd;
+	color: white; 
+}
+.btn-gray:hover,
+.btn-gray.active{
+	background-color: #7a868a;
+ 	text-decoration:none;
+}
+.btn-red{
+	border-radius:3px;
+	background-color: #D73D32;
+	color: white;
+}
+.btn-red:hover{
+	background-color: #E74B37;
+}
+.btn-green{
+	border-radius:3px;
+	color: #fff;
+    background-color: #5cb85c;
+}
+.btn-green:hover{
+	color: #fff;
+    background-color: #449d44;
+}
+/*按钮大小*/
+.btn-large{
+	padding:13px 25px;
+}
+.btn-small{
+	padding:5px 11px;
+}
+
+
+
+/*======================表单样式（非最终样式）========================*/
+.form{
+	/*box-shadow: 0 0 1px 1px rgba(0,0,0,.1);*/
+	/*border:1px solid #ddd;*/
+	box-sizing: border-box;
+	margin:5px;
+	padding-bottom:20px;
+	width: auto;
+	background-color: white;
+}
+.form .main-row{
+	border-bottom:1px dashed #e9e9e9;
+}
+.form .main-row:last-child {
+	border: none;
+}
+.form .main-col{
+	min-height: 35px;
+	line-height: 35px;
+	padding:15px 10px;
+}
+.form .star{
+	color: red;
+	padding-right: 5px;
+	font-size: 15px;
+}
+.form-hint{
+	vertical-align: top;
+	padding-left:10px;
+	color:#777;
+}
+form.vertical .form-hint{
+	padding-left: 0;
+	padding-right: 2em;
+	line-height: 1.5em;
+}
+.form input[type=text],
+.form input[type=password],
+.form input[type=number]{
+	width: 260px;
+	height: 30px;
+	border: 1px solid #ccc;
+	color: #555;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.form input.long-field {
+	width: 40em;
+}
+
+.form input.middle-field {
+	width: 30em;
+}
+
+.form input[type=number],
+.form input.date {
+	width: 6em;
+}
+
+.form textarea {
+	display: block;
+	width: 40em;
+	height: 8em;
+	border: 1px solid #ccc;
+	color: #555;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.form select{
+	width: 230px;
+	outline: none;
+	height:30px;
+/* 	height: 1.5em; */
+/* 	line-height: 1.5em; */
+/* 	background-color: white; */
+}
+.form input,
+.form select,
+.form textarea{
+	padding-left:5px;
+	padding-right:5px;
+}
+.form .btn{
+	margin-right: 5px;
+}
+
+/* start upload */
+.image-upload {
+	display: inline-block;
+	border: 1px solid #eee;
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.image-upload>div {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.image-upload:hover>div {
+	display: table;
+}
+.image-upload .table-row {
+	display: table-row;
+}
+.image-upload .table-cell {
+	display: table-cell;
+	background-color: #aaa;
+	vertical-align: middle;
+	text-align: center;
+	opacity: 0.9;
+	cursor: pointer;
+}
+/* end upload */
+
+/* start preview */
+.image-preview {
+	display: inline-block;
+	border: 1px solid #eee;
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.image-preview>div {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.image-preview .table-row {
+	display: table-row;
+}
+.image-preview .table-cell {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.image-preview .table-cell span{
+	display: none;
+}
+
+.image-preview:hover .table-cell span{
+	display: block;
+}
+.image-preview:hover .table-cell img{
+	display: none;
+}
+
+/* end preview */
+
+
+/* form 下多组类别的checkbox*/
+.form dl{
+	max-width: 800px;
+}
+.form dt{
+	float: left;	
+	clear: left;
+	text-align: right;
+	font-weight: bolder;
+}
+.form dd{
+	margin-left:80px;
+}
+.form dd input{
+	vertical-align: middle;
+}
+.form dd label{
+	margin-right: 10px;
+	display: inline-block;
+}

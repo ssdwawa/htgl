@@ -1,0 +1,46 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">学历设置</div>
+            <div class="panel-operate"><a ng-click="addDiploma()" class="btn btn-info">新建</a></div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-20">学历</div>
+                    <div class="main-col col-50">操作</div>
+                </div>
+                <div class="main-row tbody" ng-repeat="item in tableData">
+                    <div class="main-col col-20">{{item.degree}}</div>
+                    <div class="main-col col-50">
+                        <a ng-click="edit(item)" class="btn btn-small btn-info">编辑</a>
+                        <a ng-click="delete(item)" class="btn btn-small btn-red">删除</a>
+                        <a ng-if="$index !== 0" ng-click="move(item, $index,'up')" class="btn btn-small btn-green">上移</a>
+                        <a ng-if="$index !== tableData.length - 1" ng-click="move(item, $index,'down')" class="btn btn-small btn-green">下移</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="diplomaEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>学历：</label></div>
+                <div class="main-col">
+                    <input type="text" name="degree" class="form-data"/>
+                </div>
+            </div>
+            <div class="main-row" style="display: none">
+                <div class="main-col col-30 txt_right"><label>xxxxx</label></div>
+                <div class="main-col">
+                    <input type="text" name="xxxxx"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>

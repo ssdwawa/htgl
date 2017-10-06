@@ -1,0 +1,92 @@
+<div class="main-row">
+    <div class="main-col">
+        <div class="panel panel-default ">
+            <div class="panel-head">特色标签</div>
+            <div class="panel-operate"><a ng-click="add()" class="btn btn-info">新建</a></div>
+            <div class="panel-list">
+                <div class="main-row thead">
+                    <div class="main-col col-20">特色标签</div>
+                    <div class="main-col col-50">操作</div>
+                </div>
+                <div ng-repeat="item in tableData">
+                    <div class="main-row tbody level1">
+                        <div class="main-col col-20">{{item.tagName}}</div>
+                        <div class="main-col col-50">
+                            <a ng-click="addChild(item)" class="btn btn-small btn-info">添加子项</a>
+                            <a ng-click="edit(item)" class="btn btn-small btn-info">编辑</a>
+                            <a ng-click="delete(item)" class="btn btn-small btn-red">删除</a>
+                            <a ng-if="$index !== 0" ng-click="move(item,$index,'up')" class="btn btn-small btn-green">上移</a>
+                            <a ng-if="$index !== tableData.length - 1" ng-click="move(item,$index,'down')" class="btn btn-small btn-green">下移</a>
+                        </div>
+                    </div>
+                    <div class="main-row tbody level2" ng-repeat="child in item.children">
+                        <div class="main-col col-20">{{child.infoName}}</div>
+                        <div class="main-col col-50">
+                            <a ng-click="editChild(child, item)" class="btn btn-small btn-info">编辑</a>
+                            <a ng-click="deleteChild(child)" class="btn btn-small btn-red">删除</a>
+                            <a ng-if="$index !== 0" ng-click="moveChild(child, $index, 'up', item.children)" class="btn btn-small btn-green">上移</a>
+                            <a ng-if="$index !== item.children.length - 1" ng-click="moveChild(child, $index, 'down', item.children)" class="btn btn-small btn-green">下移</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="tagEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>标签名称：</label></div>
+                <div class="main-col">
+                    <input type="text" name="tagName" class="form-data"/>
+                </div>
+            </div>
+            <div class="main-row" style="display: none">
+                <div class="main-col col-30 txt_right"><label>xxxxx</label></div>
+                <div class="main-col">
+                    <input type="text" name="xxxxx"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>标签类型：</label></div>
+                <div class="main-col">
+                    <select name="isRadio" style="width: 270px;height: 35px;line-height: 35px" class="form-data">
+                        <option value="">--请选择--</option>
+                        <option value="0">允许单选</option>
+                        <option value="1">允许多选</option>
+                    </select>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<template id="childEditor">
+    <div class="panel panel-default">
+        <form class="form">
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"><label>标签内容：</label></div>
+                <div class="main-col">
+                    <input type="text" name="tagName" class="form-data"/>
+                </div>
+            </div>
+
+            <div class="main-row" style="display: none">
+                <div class="main-col col-30 txt_right"><label>xxxxx</label></div>
+                <div class="main-col">
+                    <input type="text" name="xxxxx"/>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-col col-30 txt_right"></div>
+                <div class="main-col"><a class="btn btn-info" id="submit">确定</a></div>
+            </div>
+        </form>
+    </div>
+</template>

@@ -1,0 +1,384 @@
+/*
+ * 本样式文件用于控制页面整体结构布局
+ * 2016-06-17
+ * */
+
+/*整体结构*/
+body{
+	background-color: #ecf5fd;
+}
+.warp{
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+}
+/*==================================顶部导航==================================*/
+.topbar{
+	position: fixed;
+	top:0px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #23b7e5;
+	box-shadow: 0 0 1px 0px rgba(0,0,0,0.3),0 0 6px 2px rgba(0,0,0,0.15);
+	font-weight: bold;
+	z-index: 102;
+}
+.logo{
+	float: left;
+	/*background-image: url(../img/logo.png);*/
+	background-repeat: no-repeat;
+	background-position:center;
+	color: #ffffff;
+	font-size: 18px;
+	padding-left: 15px;
+	width:350px;
+	height: 50px;
+}
+.topbar-topnav{
+	float: left;
+}
+.topbar-info{
+	float:right;
+}
+.topbar-info ul li{
+	float: left;
+	color: white;
+}
+.topbar-info ul li a,
+.topbar-info ul li span{
+	display: block;
+	padding:0 15px;
+	color:white;
+	transition: all .3s ease-in-out;
+}
+.topbar-info ul li a:hover,
+.topbar-info ul li a.active{
+	background-color: #008fbf;
+	color: white;
+	text-decoration: none;
+	
+}
+
+
+/*============================左侧导航====================================*/
+.sidebar{
+	position: fixed;
+	width: 100%;
+	top:50px;
+	left: 0px;
+	bottom: 0px;
+	box-sizing: border-box;
+	width: 210px;
+	background-color: white;
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+	z-index: 101;
+}
+.sidebar-leftnav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+}
+.sidebar-leftnav ul li{
+	
+}
+.sidebar-leftnav ul li a{
+	display: block;
+	position: relative;
+	padding:17px 0 17px 50px;
+	transition: all .3s ease-in-out;
+	cursor:pointer;
+}
+.sidebar-leftnav ul li a:hover{
+	text-decoration: none;
+}
+
+.sidebar-leftnav ul li a i{
+	display: block;
+	position: absolute;
+	text-align: center;
+	width: 44px;
+	left: 0;
+	font-size: 16px;
+	color: #23b7e5;
+}
+
+.sidebar-leftnav ul.level_1>li>a{
+	color: #555;
+}
+
+.sidebar-leftnav ul.level_1>li>a:hover i{
+	color: white
+}
+.sidebar-leftnav ul.level_1>li>a:after{
+	position: absolute;
+	width: 44px;
+	right: 0;
+	text-align: center;
+	content: "\f067";
+	display: inline-block;
+    font: normal normal normal 10px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.sidebar-leftnav ul.level_1>li.on>a:after{
+	content: "\f068";
+}
+.sidebar-leftnav ul.level_1>li.on>a:hover{
+	background-color: #31b0d5 !important;
+	color: white;
+}
+.sidebar-leftnav ul.level_1>li.on>a:hover i{
+    color: white !important;
+}
+
+.sidebar-leftnav ul.level_2{
+	background-color: #f0f0f0;
+	border-left:3px solid #23b7e5;
+}
+.sidebar-leftnav ul.level_2>li>a{
+	color: #999;
+}
+.sidebar-leftnav ul.level_2>li>a:hover{
+	color: white;
+	background-color: #31b0d5;
+}
+.sidebar-leftnav ul.level_2>li>a.active{
+	color: white;
+	background-color: #23b7e5;
+}
+.sidebar-leftnav .level_1 ul.level_2{
+	overflow: hidden;
+	max-height: 0;
+	transition: all .2s;
+}
+.sidebar-leftnav .level_1 .on ul.level_2{
+	max-height: 385px;
+}
+
+/*=======================中部内容区域================================*/
+.main{
+    position: absolute;
+    top: 50px;
+    left: 210px;
+    bottom: 0px;
+    right: 0px;
+    box-sizing: border-box;
+    padding:10px ;
+	z-index: 100;
+}
+/*中部内容行、列*/
+.main-row{
+	box-sizing: border-box;
+	display:table;
+	width: 100%;
+}
+.main-col{
+	box-sizing: border-box;
+	width: auto;
+	padding:7px; /*控制单元格之间的间距*/
+	display: table-cell;
+	vertical-align:top;
+}
+
+
+
+/*************** SCROLLBAR BASE CSS ***************/
+ 
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+ 
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+ 
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+ 
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+ 
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+ 
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+/*************** SCROLLBAR MAC OS X ***************/
+
+.scrollbar-macosx {
+    height: 100%;	
+}
+
+.scrollbar-macosx > .scroll-element,
+.scrollbar-macosx > .scroll-element div
+{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-macosx > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-macosx > .scroll-element .scroll-element_track { display: none; }
+.scrollbar-macosx > .scroll-element .scroll-bar {
+    background-color: #aaa;
+    display: block;
+
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+.scrollbar-macosx:hover > .scroll-element .scroll-bar,
+.scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 1;
+}
+
+
+.scrollbar-macosx > .scroll-element.scroll-x {
+    bottom: 0px;
+    height: 0px;
+    left: 0;
+    min-width: 100%;
+    overflow: visible;
+    width: 100%;
+}
+
+.scrollbar-macosx > .scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0px;
+    top: 0;
+    width: 0px;
+}
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-bar { height: 7px; min-width: 10px; top: -9px; }
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-bar { left: -7px; min-height: 10px; width: 7px; }
+
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer { left: 2px; }
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size { left: -4px; }
+
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer { top: 2px; }
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size { top: -4px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
+.scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
+
+
+/*翻页样式*/
+.paging{
+	padding-top: 20px;
+}
+
+.paging span{
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: middle;
+	outline: 0;
+	padding:5px 11px;
+	line-height:1.5;
+	border-radius:3px;
+	background-color: #e4e7ea;
+	border:1px solid #e4e7ea;
+    color: #636e7b;
+}
+
+
+/*-----------------补丁样式-----------------------*/
+
+/*单元格宽度自定义,可自定义更多样式*/
+.col-10{width: 10%;}
+.col-15{width: 15%;}
+.col-20{width: 20%;}
+.col-25{width: 25%;}
+.col-30{width: 30%;}
+.col-40{width: 40%;}
+.col-50{width: 50%;}
+
+/*内容对齐方式*/
+.txt_right{text-align: right;}
+.txt_left{text-align: left;}
+
+/*浮动方式*/
+.pull_right{float:right;}
+.pull_left{float:left;}
